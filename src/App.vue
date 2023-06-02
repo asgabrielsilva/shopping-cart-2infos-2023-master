@@ -6,6 +6,7 @@ import {
   removerItemCarrinho, 
   atualizaQuantidadeItem
 } from '@/_data/carrinho.js'
+import CardLivro from '@/components/CardLivro.vue'
 
 function formatarPreco(preco) {
   return 'R$ ' + preco.toFixed(2).replace('.', ',')
@@ -16,19 +17,12 @@ function formatarPreco(preco) {
   <h1>Minha livraria</h1>
   <div class="container-geral">
     <div class="listagem-livros">
-      <div class="card-livro" v-for="livro in livros" :key="livro.id">
-        <div class="card-info-livro">
-          <div class="wrap-livro">
-            <img :src="livro.img" alt="Capa do livro" class="capa-livro" />
-          </div>
-          <p class="titulo-livro">{{ livro.title }}</p>
-          <p class="autor-livro">{{ livro.author }}</p>
-          <p class="preco-livro">{{ formatarPreco(livro.price) }}</p>
-        </div>
-        <div class="card-buttons-livros">
-          <button @click="adicionarAoCarrinho(livro)">Adicionar ao carrinho</button>
-        </div>
-      </div>
+      <card-livro 
+      v-for="livro in livros" 
+      v-bind:key="livro.id" 
+      v-bind:livro="livro" 
+      @adicionarAoCarrinho="adicionarAoCarrinho"
+      />
     </div>
     <div class="carrinho">
       <h2>Meu carrinho</h2>
@@ -126,46 +120,8 @@ function formatarPreco(preco) {
   display: grid;
   grid-template-columns: 3fr 1fr;
 }
-
-.carrinho {
-  /* min-width: 20%; */
-}
 .listagem-livros {
   display: flex;
   flex-wrap: wrap;
-}
-
-.card-livro {
-  margin: 5px 10px;
-  padding: 10px;
-  background-color: beige;
-  border-radius: 10px;
-  width: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.wrap-livro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  border-radius: 10px;
-  width: 180px;
-  height: 270px;
-}
-.capa-livro {
-  width: 90%;
-  max-height: 100%;
-}
-
-.card-livro p {
-  margin: 0;
-}
-
-.card-livro .titulo-livro {
-  font-weight: bold;
-  margin-bottom: 5px;
 }
 </style>
