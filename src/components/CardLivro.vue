@@ -1,11 +1,11 @@
 <script setup>
+import MButton from './MButton.vue'
+
 const props = defineProps({
     livro: Object
 })
 const emit = defineEmits(['adicionarAoCarrinho'])
-function adicionarAoCarrinho(livro) {
-    emit('adicionarAoCarrinho', livro)
-}
+
 
 function formatarPreco(preco) {
   return 'R$ ' + preco.toFixed(2).replace('.', ',')
@@ -23,7 +23,9 @@ function formatarPreco(preco) {
           <p class="preco-livro">{{ formatarPreco(props.livro.price) }}</p>
         </div>
         <div class="card-buttons-livros">
-          <button @click="adicionarAoCarrinho(props.livro)">Adicionar ao carrinho</button>
+          <m-button @click="emit('adicionarAoCarrinho', props.livro)" 
+          text="Adicionar ao carrinho"></m-button>
+          <MButton text="Sabado"/>
         </div>
       </div>
 </template>
