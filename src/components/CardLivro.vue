@@ -1,11 +1,12 @@
 <script setup>
 import MButton from './MButton.vue'
+import CartPlus from 'vue-material-design-icons/CartPlus.vue'
+import ShareVariant from 'vue-material-design-icons/ShareVariant.vue'
 
 const props = defineProps({
-    livro: Object
+  livro: Object
 })
 const emit = defineEmits(['adicionarAoCarrinho'])
-
 
 function formatarPreco(preco) {
   return 'R$ ' + preco.toFixed(2).replace('.', ',')
@@ -13,21 +14,22 @@ function formatarPreco(preco) {
 </script>
 
 <template>
-    <div class="card-livro">
-        <div class="card-info-livro">
-          <div class="wrap-livro">
-            <img :src="props.livro.img" alt="Capa do livro" class="capa-livro" />
-          </div>
-          <p class="titulo-livro">{{ props.livro.title }}</p>
-          <p class="autor-livro">{{ props.livro.author }}</p>
-          <p class="preco-livro">{{ formatarPreco(props.livro.price) }}</p>
-        </div>
-        <div class="card-buttons-livros">
-          <m-button @click="emit('adicionarAoCarrinho', props.livro)" 
-          text="Adicionar ao carrinho"></m-button>
-          <MButton text="Sabado"/>
-        </div>
+  <div class="card-livro">
+    <div class="card-info-livro">
+      <div class="wrap-livro">
+        <img :src="props.livro.img" alt="Capa do livro" class="capa-livro" />
       </div>
+      <p class="titulo-livro">{{ props.livro.title }}</p>
+      <p class="autor-livro">{{ props.livro.author }}</p>
+      <p class="preco-livro">{{ formatarPreco(props.livro.price) }}</p>
+    </div>
+    <div class="card-buttons-livros">
+      <m-button class="secundario" @click="emit('adicionarAoCarrinho', props.livro)">
+        <cart-plus /> Adicionar ao carrinho
+      </m-button>
+      <m-button class="sucesso"> <share-variant /> </m-button>
+    </div>
+  </div>
 </template>
 
 <style scoped>
