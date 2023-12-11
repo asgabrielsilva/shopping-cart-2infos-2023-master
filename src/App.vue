@@ -5,6 +5,7 @@
   <header>
     <nav>
       <router-link to="/">Home</router-link>
+      <router-link to="/carrinho">Carrinho</router-link>
       <router-link to="/filmes">Filmes</router-link>
       <router-link to="/tv">Programas de TV</router-link>
     </nav>
