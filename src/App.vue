@@ -24,6 +24,7 @@ header {
   color: #fff;
   font-size: 1.2rem;
   padding-left: 2rem;
+  z-index: 1000;
 }
 
 nav {
@@ -31,10 +32,12 @@ nav {
   align-items: center;
   margin-bottom: 0;
   column-gap: 2rem;
+  z-index: 1000;
 }
 
 nav a {
   text-decoration: none;
   color: #fff;
+  z-index: 1000;
 }
 </style>

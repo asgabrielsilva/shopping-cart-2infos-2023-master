@@ -1,13 +1,13 @@
 <script setup>
 import ListagemLivros from '@/components/ListagemLivros.vue'
-import MeuCarrinho from '@/components/MeuCarrinho.vue'
+
 </script>
 
 <template>
   <h1>Minha livraria</h1>
   <div class="container-geral">
     <ListagemLivros />
-    <MeuCarrinho />
+
   </div>
 </template>
 
@@ -15,8 +15,10 @@ import MeuCarrinho from '@/components/MeuCarrinho.vue'
 .container-geral {
   /* display: flex;
   justify-content: space-between; */
-  display: grid;
-  grid-template-columns: 3fr 1fr;
+  display: block;
+  position: absolute;
+  flex-direction: column;
+  color: #fff;
 }
 
 </style>
