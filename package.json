@@ -10,8 +10,12 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "axios": "^1.6.2",
+    "pinia": "^2.1.7",
     "vue": "^3.3.2",
-    "vue-material-design-icons": "^5.2.0"
+    "vue-loading-overlay": "^6.0.3",
+    "vue-material-design-icons": "^5.2.0",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",

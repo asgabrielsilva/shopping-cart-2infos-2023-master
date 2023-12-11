@@ -1,22 +1,39 @@
 <script setup>
-import ListagemLivros from '@/components/ListagemLivros.vue'
-import MeuCarrinho from '@/components/MeuCarrinho.vue'
 </script>
 
 <template>
-  <h1>Minha livraria</h1>
-  <div class="container-geral">
-    <ListagemLivros />
-    <MeuCarrinho />
-  </div>
+  <header>
+    <nav>
+      <router-link to="/">Home</router-link>
+      <router-link to="/filmes">Filmes</router-link>
+      <router-link to="/tv">Programas de TV</router-link>
+    </nav>
+  </header>
+  <main>
+    <router-view />
+  </main>
 </template>
 
 <style scoped>
-.container-geral {
-  /* display: flex;
-  justify-content: space-between; */
-  display: grid;
-  grid-template-columns: 3fr 1fr;
+
+header {
+  height: 3rem;
+  display: flex;
+  background-color: black;
+  color: #fff;
+  font-size: 1.2rem;
+  padding-left: 2rem;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  column-gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+}
 </style>
