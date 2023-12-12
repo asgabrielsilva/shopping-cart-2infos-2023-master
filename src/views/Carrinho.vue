@@ -1,5 +1,5 @@
 <script setup>
-import ListagemLivros from '@/components/ListagemMovie.vue'
+import ListagemLivros from '@/components/ListagemLivros.vue'
 
 </script>
 
