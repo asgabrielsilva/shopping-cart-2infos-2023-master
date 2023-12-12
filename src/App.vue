@@ -2,6 +2,8 @@
 </script>
 
 <template>
+  
+
   <header>
     <nav>
       <router-link to="/">Home</router-link>

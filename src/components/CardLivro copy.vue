@@ -2,10 +2,6 @@
 import MButton from './MButton.vue'
 import CartPlus from 'vue-material-design-icons/CartPlus.vue'
 import ShareVariant from 'vue-material-design-icons/ShareVariant.vue'
-import { Carousel, Slide } from 'vue-carousel';
-
-
-
 
 
 const props = defineProps({
@@ -19,27 +15,12 @@ function formatarPreco(preco) {
 </script>
 
 <template>
-   <input type="radio" name="position" checked />
-  <input type="radio" name="position" />
-  <input type="radio" name="position" />
-  <input type="radio" name="position" />
-  <input type="radio" name="position" />
-  <main id="carousel">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-  </main>
-  
-
-
   
   <div class="carrousel-movie">
   <div class="own-carrousel own-theme">
-    <div class="item" style="">
-      <div class="box-movie wrap-livro" style="margin-left: 50px;">
-        <img :src="props.livro.img" alt="Capa do livro"  class="capa-livro" />
+    <div class="item">
+      <div class="box- wrap-livro">
+        <img :src="props.livro.img" alt="Capa do livro" class="capa-livro" />
       </div>
       <h3 class="box-movie">{{ props.livro.title }}</h3>
       <p class="box-movie">{{ props.livro.author }}</p>
@@ -57,20 +38,8 @@ function formatarPreco(preco) {
 </template>
 
 <style scoped>
-
-.carrousel-movie{
-  margin: 10px;
-  padding: 10px;
-  border: 3px solid #fff;
-  border-radius: 9px;
-  background: #4e4e4e;
-  box-shadow: 10vh;
-}
-.item img{
-  display: flex;
+.item{
   justify-content: center;
-  align-items: center;
-
 
 }
 h3{
@@ -110,16 +79,9 @@ h3{
 
 .carrousel-movie {
   display: flex;
-    margin: 10px;
+    margin-top: 5px;
     justify-content: center;
     align-items: center;
-    text-align: center;
-}
-.carrousel-movie img {
-  display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
 /* início da estilização do footer */
@@ -197,7 +159,6 @@ h3{
 .wrap-livro {
   display: flex;
   justify-content: center;
-  flex-direction:row ;
   align-items: center;
   background-color: white;
   border-radius: 10px;
@@ -215,5 +176,6 @@ h3{
 
 .card-livro .titulo-livro {
   font-weight: bold;
+  margin-bottom: 5px;
 }
 </style>

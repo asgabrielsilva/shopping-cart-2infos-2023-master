@@ -40,7 +40,7 @@ function formatarPreco(preco) {
           </div>
         </div>
       </div>
-      <m-button text="Limpar carrinho" @click="limparCarrinho()"/>
+      <m-button class="" text="Limpar carrinho" @click="limparCarrinho()"/>
       <p class="carrinho-total">Total: {{ formatarPreco(carrinho.total) }}</p>
     </div>
   </div>
@@ -48,15 +48,19 @@ function formatarPreco(preco) {
 
 <style scoped>
 
-.carrinho {
-  display: flex;
+.carrinho-total {
+  border-radius: 8px;
+  background: #fff;
+  padding: 4px;
 
 }
 .wrap-carrinho .carrinho-total {
   position: fixed;
   bottom: 3%;
+  right: 3%;
   font-size: 1.5rem;
   font-weight: bold;
+  color: blueviolet;
 }
 
 .item-carrinho .info-livro {

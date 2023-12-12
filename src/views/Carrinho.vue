@@ -13,10 +13,12 @@ import ListagemLivros from '@/components/ListagemLivros.vue'
 
 <style scoped>
 .container-geral {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
   /* display: flex;
   justify-content: space-between; */
-  display: block;
-  position: absolute;
   flex-direction: column;
   color: #fff;
 }
