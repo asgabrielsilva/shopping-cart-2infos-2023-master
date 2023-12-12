@@ -32,17 +32,19 @@ import CardLivro from '@/components/CardLivro.vue'
 <s id="s4"></s>
 
 <div class="slider reveal">
-  <div style="background:#5b8;">
-    <h2>PURE <b>CSS</b> SLIDESHOW</h2>
-    <p>Responsive Slideshow Gallery created using CSS only<br>by Roko</p>
+  <div style="background:#5b8; ">
+	<div style="padding-bottom: 100px;">
+    <h2></h2>
+    <p></p>
+</div>
   </div>
-  <div style="background:rgb(254, 252, 255);">
+  <div class="SLIDER" style="background-image: url(https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/YD0rlEZL87CvpXRe/abstract-blue-wave-background-digital-art-4k-wallpaper-uhdpaper.com-486-0-f-dJoB7z11nLsVlrZ2.jpg);">
     <h2>Slide 2</h2>
   </div>
-  <div style="background:#e95;">
+  <div style="background-image:url(https://wallpapers.com/images/hd/abstract-background-6m6cjbifu3zpfv84.jpg);">
     <h2>Slide 3</h2>
   </div>
-  <div style="background:#e59;">
+  <div style="background-image: url(https://4kwallpapers.com/images/wallpapers/abstract-background-2880x1800-9741.jpg);">
     <h2>Slide 4</h2>
   </div>
 </div>
@@ -131,16 +133,30 @@ http://stackoverflow.com/a/34696029/383904
 .CSSgal {
 	position: relative;
 	overflow: hidden;
-	height: 100%; /* Or set a fixed height */
+	height: 450px; /* Or set a fixed height */
+	width: 70%;
+	margin-bottom: 100px;
+	
+}
+.CSSgal img{
+	z-index: 100;
 }
 
 /* SLIDER */
 
 .CSSgal .slider {
-	height: 100%;
+	height: 140%;
 	white-space: nowrap;
 	font-size: 0;
 	transition: 0.8s;
+}
+
+.slider{
+
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 500px;
 }
 
 /* SLIDES */
@@ -150,7 +166,6 @@ http://stackoverflow.com/a/34696029/383904
 	display: inline-block;
 	white-space: normal;
 	vertical-align: top;
-	height: 100%;
 	width: 100%;
 	background: none 50% no-repeat;
 	background-size: cover;

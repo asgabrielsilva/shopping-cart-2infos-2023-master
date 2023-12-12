@@ -15,19 +15,6 @@ function formatarPreco(preco) {
 </script>
 
 <template>
-   <input type="radio" name="position" checked />
-  <input type="radio" name="position" />
-  <input type="radio" name="position" />
-  <input type="radio" name="position" />
-  <input type="radio" name="position" />
-  <main id="carousel">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-  </main>
-  
 
 
   

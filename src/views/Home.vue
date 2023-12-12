@@ -1,24 +1,4 @@
 <script setup>
-let lua = document.getElementById('lua');
-    let ceu = document.getElementById('ceu');
-    let estrelas = document.getElementById('estrelas');
-    let montanhas = document.getElementById('montanhas');
-    let rua = document.getElementById('rua');
-    let texto = document.getElementById('texto');
-    let btn = document.getElementById('btn');
-
-    window.addEventListener('scroll', function(){
-        let value = window.scrollY;
-        btn.style.marginTop = value * 1.5 + 'px';
-        estrelas.style.left = value * 0.25 + 'px';
-        lua.style.top = value * 1.05 + 'px';
-        ceu.style.top = value * 1.05 + 'px';
-        montanhas.style.bottom = value * 0.5 + 'px';
-        rua.style.left = value * 0 + 'px';
-        texto.style.marginTop = value * 1.5 + 'px';
-        texto.style.marginRight = value * 4 + 'px';
-
-    })
     function reveal() {
   let reveals = document.querySelectorAll(".reveal");
 
@@ -436,6 +416,10 @@ body{
     100% {
       transform: translate3d(16vw, 31vh, 36px);
     }
+  }
+
+  #texto{
+    padding: 150px;
   }
 
 </style>
