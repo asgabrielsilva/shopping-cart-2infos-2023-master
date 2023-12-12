@@ -24,7 +24,6 @@ const emit = defineEmits(['adicionarAoCarrinho'])
 </script>
 
 <template>
-  
 
 
   

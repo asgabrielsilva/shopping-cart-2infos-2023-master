@@ -43,6 +43,7 @@ window.addEventListener("scroll", reveal);
       </div>
     </nav>
   </body>
+  <img src="assets/tailwind.css" alt="">
 
 
  
