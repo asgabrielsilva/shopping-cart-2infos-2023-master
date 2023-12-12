@@ -10,15 +10,12 @@ import CardLivro from '@/components/CardLivro.vue'
 <template>
    <img style="position: absolute;" src="../assets/img/estrelas.png" alt="">
    <img style="position: absolute;" src="../assets/img/montanhas.png" alt="">
-   <img style="position: absolute;" src="../assets/img/rua.png" alt="">
+   <img class="rua1" style="position: absolute;" src="../assets/img/rua.png" alt="">
    <div class="banana">
 
 	<div class="overlay">
-<h1>Simply The Best</h1>
-<h3>Reasons for Choosing US</h3>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab.</p>
+<h1>Séries de Animação</h1>
 	<br>
-	<button>READ MORE</button>
 		</div>
   </div>
   
@@ -32,7 +29,7 @@ import CardLivro from '@/components/CardLivro.vue'
 <s id="s4"></s>
 
 <div class="slider reveal">
-  <div style="background:#5b8; ">
+  <div style="background-image: url(https://i.pinimg.com/originals/53/dd/ae/53ddae2fcba0f4c37bb0f1cc9164e8a2.gif); border-radius: 30px; ">
 	<div style="padding-bottom: 100px;">
     <h2></h2>
     <p></p>
@@ -71,11 +68,101 @@ import CardLivro from '@/components/CardLivro.vue'
       @adicionarAoCarrinho="adicionarAoCarrinho"
     />
   </div>
-  <MeuCarrinho />
+  
+  <input type="checkbox" id="modal">
+<label for="modal" class="example-label btn">Open Modal</label>
+<label for="modal" class="modal-background"></label>
+<div class="modal">
+	<div class="modal-header">
+		<h3>Modal Title</h3>
+        <label for="modal">
+        	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAdVBMVEUAAABNTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU0N3NIOAAAAJnRSTlMAAQIDBAUGBwgRFRYZGiEjQ3l7hYaqtLm8vsDFx87a4uvv8fP1+bbY9ZEAAAB8SURBVBhXXY5LFoJAAMOCIP4VBRXEv5j7H9HFDOizu2TRFljedgCQHeocWHVaAWStXnKyl2oVWI+kd1XLvFV1D7Ng3qrWKYMZ+MdEhk3gbhw59KvlH0eTnf2mgiRwvQ7NW6aqNmncukKhnvo/zzlQ2PR/HgsAJkncH6XwAcr0FUY5BVeFAAAAAElFTkSuQmCC" width="16" height="16" alt="">
+        </label>
+    </div>
+    <MeuCarrinho />
+</div>
   
 </template>
 
 <style scoped>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+input[type="checkbox"] {
+	display:none;
+}
+input[type="checkbox"]:checked ~ .modal,
+input[type="checkbox"]:checked ~ .modal-background {
+	display: block;
+}
+.modal-background {
+	width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 9998;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: none;	
+    width: 300px;
+    height: 300px;
+    background-color: #fff;
+    box-sizing: border-box;
+    z-index: 9999;
+}
+.modal > p {
+	padding: 15px;
+    margin: 0;
+}
+.modal-header {
+	background-color: #f9f9f9;
+    border-bottom: 1px solid #dddddd;
+    box-sizing: border-box;
+    height: 50px;
+}
+.modal-header h3 {
+	margin: 0;
+    box-sizing: border-box;
+    padding-left: 15px;
+    line-height: 50px;
+    color: #4d4d4d;
+    font-size: 16px;
+    display: inline-block;
+}
+.modal-header label {
+	box-sizing: border-box;
+    border-left: 1px solid #dddddd;
+    float: right;
+    line-height: 50px;
+    padding: 0 15px 0 15px;
+    cursor: pointer;
+}
+.modal-header label:hover img {
+	opacity: 0.6;
+}
+/* below is optional, it is just an example for the blue button */
+.example-label {
+	box-sizing: border-box;
+    display: inline-block;
+    padding: 10px;
+    background-color: #375d91;
+    color: #f9f9f9;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.example-label:hover {
+	background-color: #3c669f;
+}
 .reveal {
   transform: translateY(150px);
   opacity: 0;
@@ -104,8 +191,15 @@ import CardLivro from '@/components/CardLivro.vue'
 	padding: 50px;
 	color: #FFF;
 	text-shadow: 1px 1px 1px #333;
-  background-image: linear-gradient( 135deg, #7105ff69 10%, rgba(253, 8, 212, 0.42) 100%);
+  background-image: linear-gradient( 135deg, #8c28aa69 10%, rgba(53, 8, 253, 0.42) 100%);
+  border: 2px solid #fff ;
+  
 	
+}
+
+.rua1:before{
+	background: linear-gradient(to top,#d4760a,transparent);
+	z-index: 10000;
 }
 
 h1 {

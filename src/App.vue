@@ -51,6 +51,7 @@ window.addEventListener("scroll", reveal);
   <main>
     <router-view />
   </main>
+  
 </template>
 
 <style scoped>
