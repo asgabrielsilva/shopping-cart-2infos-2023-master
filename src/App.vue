@@ -81,8 +81,6 @@ button:hover{
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-  border: 4px;
-
 
 .card{
   width: 300px;
