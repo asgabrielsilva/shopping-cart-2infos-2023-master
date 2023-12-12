@@ -1,11 +1,11 @@
 <script setup>
-import ListagemLivros from '@/components/ListagemLivros.vue'
+import ListagemMovie from '@/components/ListagemMovie.vue'
 
 </script>
 
 <template>
   <div class="container-geral">
-    <ListagemLivros />
+    <ListagemMovie />
 
   </div>
 </template>

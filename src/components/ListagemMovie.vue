@@ -1,0 +1,338 @@
+<script setup>
+//import { livros } from '@/_data/livros.js'//
+//import { adicionarAoCarrinho } from '@/_data/carrinho.js'
+import MeuCarrinho from '@/components/MeuCarrinho.vue'
+import CardMovie from '@/components/CardMovie.vue'
+//
+
+</script>
+
+<template>
+   <img style="position: absolute;" src="../assets/img/estrelas.png" alt="">
+   <img style="position: absolute;" src="../assets/img/montanhas.png" alt="">
+   <img style="position: absolute;" src="../assets/img/rua.png" alt="">
+   <div class="banana">
+
+	<div class="overlay">
+<h1>Simply The Best</h1>
+<h3>Reasons for Choosing US</h3>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab.</p>
+	<br>
+	<button>READ MORE</button>
+		</div>
+  </div>
+  
+  <div class="CSSgal">
+   
+
+<!-- Don't wrap targets in parent -->
+<s id="s1"></s> 
+<s id="s2"></s>
+<s id="s3"></s>
+<s id="s4"></s>
+
+<div class="slider reveal">
+  <div style="background:#5b8; ">
+	<div style="padding-bottom: 100px;">
+    <h2></h2>
+    <p></p>
+</div>
+  </div>
+  <div class="SLIDER" style="background-image: url(https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/YD0rlEZL87CvpXRe/abstract-blue-wave-background-digital-art-4k-wallpaper-uhdpaper.com-486-0-f-dJoB7z11nLsVlrZ2.jpg);">
+    <h2>Slide 2</h2>
+  </div>
+  <div style="background-image:url(https://wallpapers.com/images/hd/abstract-background-6m6cjbifu3zpfv84.jpg);">
+    <h2>Slide 3</h2>
+  </div>
+  <div style="background-image: url(https://4kwallpapers.com/images/wallpapers/abstract-background-2880x1800-9741.jpg);">
+    <h2>Slide 4</h2>
+  </div>
+</div>
+
+<div class="prevNext">
+  <div><a href="#s4"></a><a href="#s2"></a></div>
+  <div><a href="#s1"></a><a href="#s3"></a></div>
+  <div><a href="#s2"></a><a href="#s4"></a></div>
+  <div><a href="#s3"></a><a href="#s1"></a></div>
+</div>
+
+<div class="bullets">
+  <a href="#s1">1</a>
+  <a href="#s2">2</a>
+  <a href="#s3">3</a>
+  <a href="#s4">4</a>
+</div>
+
+</div>
+  
+  <div class="listagem-livros">
+    
+    <card-movie/>
+  </div>
+  <MeuCarrinho />
+  
+</template>
+
+<style scoped>
+.reveal {
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+.banana {
+	background: url('http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg');
+	text-align: center;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	overflow: hidden;
+	border-radius: 0 0 85% 85% / 30%;
+  margin-bottom: 100px;
+}
+.banana .overlay{
+	width: 100%;
+	height: 100%;
+	padding: 50px;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #333;
+  background-image: linear-gradient( 135deg, #7105ff69 10%, rgba(253, 8, 212, 0.42) 100%);
+	
+}
+
+h1 {
+	font-family: 'Dancing Script', cursive;
+	font-size: 80px;
+	margin-bottom: 30px;
+}
+
+h3, p {
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 30px;
+}
+*{box-sizing: border-box; -webkit-box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; font: 16px/1.3 sans-serif; }
+
+/*
+PURE RESPONSIVE CSS3 SLIDESHOW GALLERY by Roko C. buljan
+http://stackoverflow.com/a/34696029/383904
+*/
+
+.CSSgal {
+	position: relative;
+	overflow: hidden;
+	height: 450px; /* Or set a fixed height */
+	width: 70%;
+	margin-bottom: 100px;
+	
+}
+.CSSgal img{
+	z-index: 100;
+}
+
+/* SLIDER */
+
+.CSSgal .slider {
+	height: 140%;
+	white-space: nowrap;
+	font-size: 0;
+	transition: 0.8s;
+}
+
+.slider{
+
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 500px;
+}
+
+/* SLIDES */
+
+.CSSgal .slider > * {
+	font-size: 1rem;
+	display: inline-block;
+	white-space: normal;
+	vertical-align: top;
+	width: 100%;
+	background: none 50% no-repeat;
+	background-size: cover;
+}
+
+/* PREV/NEXT, CONTAINERS & ANCHORS */
+
+.CSSgal .prevNext {
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	width: 100%;
+	height: 0;
+}
+
+.CSSgal .prevNext > div+div {
+	visibility: hidden; /* Hide all but first P/N container */
+}
+
+.CSSgal .prevNext a {
+	background: #fff;
+	position: absolute;
+	width:       60px;
+	height:      60px;
+	line-height: 60px; /* If you want to place numbers */
+	text-align: center;
+	opacity: 0.7;
+	-webkit-transition: 0.3s;
+					transition: 0.3s;
+	-webkit-transform: translateY(-50%);
+					transform: translateY(-50%);
+	left: 0;
+}
+.CSSgal .prevNext a:hover {
+	opacity: 1;
+}
+.CSSgal .prevNext a+a {
+	left: auto;
+	right: 0;
+}
+
+/* NAVIGATION */
+
+.CSSgal .bullets {
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	padding: 10px 0;
+	width: 100%;
+	text-align: center;
+}
+.CSSgal .bullets > a {
+	display: inline-block;
+	width:       30px;
+	height:      30px;
+	line-height: 30px;
+	text-decoration: none;
+	text-align: center;
+	background: rgba(255, 255, 255, 1);
+	-webkit-transition: 0.3s;
+					transition: 0.3s;
+}
+.CSSgal .bullets > a+a {
+	background: rgba(255, 255, 255, 0.5); /* Dim all but first */
+}
+.CSSgal .bullets > a:hover {
+	background: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* NAVIGATION BUTTONS */
+/* ALL: */
+.CSSgal >s:target ~ .bullets >* {      background: rgba(255, 255, 255, 0.5);}
+/* ACTIVE */
+#s1:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
+#s2:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
+#s3:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
+#s4:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
+/* More slides? Add here more rules */
+
+/* PREV/NEXT CONTAINERS VISIBILITY */
+/* ALL: */
+.CSSgal >s:target ~ .prevNext >* {      visibility: hidden;}
+/* ACTIVE: */
+#s1:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
+#s2:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
+#s3:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
+#s4:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
+/* More slides? Add here more rules */
+
+/* SLIDER ANIMATION POSITIONS */
+
+#s1:target ~ .slider {transform: translateX(   0%); -webkit-transform: translateX(   0%);}
+#s2:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
+#s3:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
+#s4:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
+/* More slides? Add here more rules */
+
+
+/* YOU'RE THE DESIGNER! 
+   ____________________
+   All above was mainly to get it working :)
+   CSSgal CUSTOM STYLES / OVERRIDES HERE: */
+
+.CSSgal{
+	color: #fff;	
+	text-align: center;
+}
+.CSSgal .slider h2 {
+	margin-top: 40vh;
+	font-weight: 200;
+	letter-spacing: -0.06em;
+	word-spacing: 0.2em;
+	font-size: 3em;
+}
+.CSSgal a {
+	border-radius: 50%;
+	margin: 0 3px;
+	color: rgba(0,0,0,0.8);
+	text-decoration: none;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.listagem-livros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+}
+.carrinho {
+  width: 400px;
+  height: min-content;
+  background: #fff;
+  padding: 35px;
+}
+.carrinho .cabecalho-carrinho{
+  display: flex;
+}
+.carrinho .cabecalho-carrinho button{
+  cursor: pointer;
+  width: 48px;
+  height: 40px;
+  font-size: 2rem;
+  line-height: 50%;
+  background: #ddddde50;
+  border: 2px solid #ddddde;
+  border-radius: 8px;
+  transition: 0.4s;
+}
+
+.carrinho .cabecalho-carrinho button:hover{
+  color: #fff;
+  background: #462543;
+  border-color: #462543;
+}
+.carrinho .cabecalho-carrinho h3{
+  margin: auto;
+  text-align: center;
+  color: #5a154f;
+}
+
+.carrinho .carrinho-item{
+  position: relative;
+  width: 100%;
+  margin: 30px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+</style>

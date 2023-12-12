@@ -1,8 +1,8 @@
 <script setup>
 //import { livros } from '@/_data/livros.js'//
-import { adicionarAoCarrinho } from '@/_data/carrinho.js'
+//import { adicionarAoCarrinho } from '@/_data/carrinho.js'
 import MeuCarrinho from '@/components/MeuCarrinho.vue'
-import CardLivro from '@/components/CardLivro.vue'
+import CardAnime from '@/components/CardAnime.vue'
 //
 
 </script>
@@ -67,9 +67,7 @@ import CardLivro from '@/components/CardLivro.vue'
   
   <div class="listagem-livros">
     
-    <card-livro
-      @adicionarAoCarrinho="adicionarAoCarrinho"
-    />
+    <card-anime/>
   </div>
   <MeuCarrinho />
   

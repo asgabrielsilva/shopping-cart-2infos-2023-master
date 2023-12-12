@@ -4,19 +4,20 @@ import CartPlus from 'vue-material-design-icons/CartPlus.vue'
 import ShareVariant from 'vue-material-design-icons/ShareVariant.vue'
 import api from '@/plugins/axios'
 import { ref, onMounted } from 'vue'
+import { adicionarAoCarrinhoAnime } from '../_data/carrinho'
 
-const movies = ref([]);
+const animes = ref([]);
 
 onMounted(async () => {
-   const response = await api.get('discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=16&with_keywords=anime&with_original_language=ja')
-   movies.value = response.data.results
+   const response = await api.get('discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=16&with_keywords=anime&with_original_language=ja')
+   animes.value = response.data.results
 });
 const formatDate = (date) => new Date(date).toLocaleDateString('pt-BR')
 
-const props = defineProps({
-  livro: Object
-})
-const emit = defineEmits(['adicionarAoCarrinho'])
+//const props = defineProps({
+ // livro: Object
+//})
+//const emit = defineEmits(['adicionarAoCarrinho'])
 
 //function formatarPreco(preco) {
  // return 'R$ ' + preco.toFixed(2).replace('.', ',')}
@@ -28,21 +29,21 @@ const emit = defineEmits(['adicionarAoCarrinho'])
 
   
   <div class="carrousel-movie">
-    <div v-for="movie in movies" :key="movie.id" class="own-carrousel own-theme">
+    <div v-for="anime in animes" :key="anime.id" class="own-carrousel own-theme">
    <div class="movie-list">
  <div class="movie-card">
   
-   <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
+   <img :src="`https://image.tmdb.org/t/p/w500${anime.poster_path}`" :alt="anime.name" />
    <div class="movie-details">
-     <p class="movie-title">{{ movie.title }}</p>
-     <p class="movie-release-date">{{ formatDate(movie.release_date) }}</p>
-     <p class="movie-genres">{{ movie.genre }}</p>
+     <p class="movie-title">{{ anime.name }}</p>
+     <p class="movie-release-date">{{ formatDate(anime.first_air_date) }}</p>
+     <p class="movie-genres">{{ anime.genre_ids }}</p>
    </div>
   
  </div>
 </div>
     <div class="card-buttons-livros">
-      <m-button class="secundario" @click="emit('adicionarAoCarrinho', props.livro)">
+      <m-button class="secundario" @click="adicionarAoCarrinhoAnime(anime)">
         <cart-plus /> Adicionar ao carrinho
       </m-button>
       <m-button class="sucesso"> <share-variant /> </m-button>

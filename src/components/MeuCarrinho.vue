@@ -1,10 +1,8 @@
 <script setup>
-import { carrinho, removerItemCarrinho, atualizaQuantidadeItem, limparCarrinho } from '@/_data/carrinho.js'
+import { carrinho, removerItemCarrinho, limparCarrinho } from '@/_data/carrinho.js'
 import MButton from './MButton.vue'
 import CarrinhoVazio from './CarrinhoVazio.vue';
-function formatarPreco(preco) {
-  return 'R$ ' + preco.toFixed(2).replace('.', ',')
-}
+
 </script>
 
 <template>
@@ -16,32 +14,21 @@ function formatarPreco(preco) {
         <div class="item-carrinho" v-for="(item, index) in carrinho.itens" :key="index">
           <div class="info-livro">
             <div class="imagem-livro">
-              <img :src="item.img" class="icon-capa-livro" />
+              <img :src="`https://image.tmdb.org/t/p/w500${item.poster_path}`" :alt="item.title" class="icon-capa-livro" />
             </div>
             <div class="detalhes-livro">
               <div>
                 <p>{{ item.title }}</p>
-                <p class="info-livro-preco">{{ formatarPreco(item.price) }}/un</p>
               </div>
               <div>
-                <p>
-                  Quantidade:
-                  <input
-                    type="number"
-                    v-model="item.quantidade"
-                    @change="atualizaQuantidadeItem(item)"
-                    min="1"
-                  />
-                </p>
                 <button @click="removerItemCarrinho(item)">&#128465;</button>
-                <p>Total: {{ formatarPreco(item.total) }}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
       <m-button class="" text="Limpar carrinho" @click="limparCarrinho()"/>
-      <p class="carrinho-total">Total: {{ formatarPreco(carrinho.total) }}</p>
+      <p class="carrinho-total">Total: {{ carrinho.total }}</p>
     </div>
   </div>
 </template>

@@ -2,32 +2,64 @@
 import MButton from './MButton.vue'
 import CartPlus from 'vue-material-design-icons/CartPlus.vue'
 import ShareVariant from 'vue-material-design-icons/ShareVariant.vue'
+import api from '@/plugins/axios'
+import { ref, onMounted } from 'vue'
+import { adicionarAoCarrinhoMovie } from '../_data/carrinho'
+import useGenreStore from '@/stores/genre';
 
+const genreStore = useGenreStore();
 
-const props = defineProps({
-  livro: Object
-})
-const emit = defineEmits(['adicionarAoCarrinho'])
+const movies = ref([]);
 
-function formatarPreco(preco) {
-  return 'R$ ' + preco.toFixed(2).replace('.', ',')
-}
+onMounted(async () => {
+  genreStore.setCurrentGenreId(16);
+   const response = await api.get('discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=16&with_keywords=anime&with_original_language=ja')
+   movies.value = response.data.results
+});
+const formatDate = (date) => new Date(date).toLocaleDateString('pt-BR')
+
+onMounted(async () => {
+  await genreStore.getAllGenres('movie');
+});
+
+//const props = defineProps({
+ // livro: Object
+//})
+//const emit = defineEmits(['adicionarAoCarrinho'])
+
+//function formatarPreco(preco) {
+ // return 'R$ ' + preco.toFixed(2).replace('.', ',')}
+//
 </script>
 
 <template>
+
+
   
   <div class="carrousel-movie">
-  <div class="own-carrousel own-theme">
-    <div class="item">
-      <div class="box- wrap-livro">
-        <img :src="props.livro.img" alt="Capa do livro" class="capa-livro" />
-      </div>
-      <h3 class="box-movie">{{ props.livro.title }}</h3>
-      <p class="box-movie">{{ props.livro.author }}</p>
-      <p class="box-movie">{{ formatarPreco(props.livro.price) }}</p>
-    </div>
+    <div v-for="movie in movies" :key="movie.id" class="own-carrousel own-theme">
+   <div class="movie-list">
+ <div class="movie-card">
+  
+   <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" :alt="movie.title" />
+   <div class="movie-details">
+     <p class="movie-title">{{ movie.title }}</p>
+     <p class="movie-release-date">{{ formatDate(movie.release_date) }}</p>
+     <p class="movie-genres">
+  <span
+  v-for="genre_id in movie.genre_ids"
+  :key="genre_id"
+  :class="{ active: genre_id === genreStore.currentGenreId }"
+>
+   {{ genreStore.getGenreName(genre_id) }} 
+  </span>
+</p>
+   </div>
+  
+ </div>
+</div>
     <div class="card-buttons-livros">
-      <m-button class="secundario" @click="emit('adicionarAoCarrinho', props.livro)">
+      <m-button class="secundario" @click="adicionarAoCarrinhoMovie(movie)">
         <cart-plus /> Adicionar ao carrinho
       </m-button>
       <m-button class="sucesso"> <share-variant /> </m-button>
@@ -35,11 +67,31 @@ function formatarPreco(preco) {
   </div>
 </div>
 
+
+
 </template>
 
 <style scoped>
-.item{
+
+.carrousel-movie{
+  margin: 10px;
+  padding: 10px;
+  border: 3px solid #fff;
+  border-radius: 9px;
+  background: #4e4e4e;
+  box-shadow: 10vh;
+  flex-wrap: wrap;
+  
+}
+
+.own-carrousel{
+  margin: 20px;
+}
+.item img{
+  display: flex;
   justify-content: center;
+  align-items: center;
+
 
 }
 h3{
@@ -79,9 +131,16 @@ h3{
 
 .carrousel-movie {
   display: flex;
-    margin-top: 5px;
+    margin: 10px;
     justify-content: center;
     align-items: center;
+    text-align: center;
+}
+.carrousel-movie img {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 /* início da estilização do footer */
@@ -159,6 +218,7 @@ h3{
 .wrap-livro {
   display: flex;
   justify-content: center;
+  flex-direction:row ;
   align-items: center;
   background-color: white;
   border-radius: 10px;
@@ -176,6 +236,5 @@ h3{
 
 .card-livro .titulo-livro {
   font-weight: bold;
-  margin-bottom: 5px;
 }
 </style>

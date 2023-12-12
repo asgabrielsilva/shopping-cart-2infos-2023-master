@@ -8,7 +8,7 @@ const routes = [
   },
   {
     path: '/carrinho',
-    name: 'Carrimhp',
+    name: 'Carrinho',
     component: () => import('../views/Carrinho.vue')
   },
   {
