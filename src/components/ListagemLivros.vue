@@ -8,8 +8,22 @@ import CardLivro from '@/components/CardLivro.vue'
 </script>
 
 <template>
+   <img style="position: absolute;" src="../assets/img/estrelas.png" alt="">
+   <img style="position: absolute;" src="../assets/img/montanhas.png" alt="">
+   <img style="position: absolute;" src="../assets/img/rua.png" alt="">
+   <div class="banana">
+
+	<div class="overlay">
+<h1>Simply The Best</h1>
+<h3>Reasons for Choosing US</h3>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab.</p>
+	<br>
+	<button>READ MORE</button>
+		</div>
+  </div>
   
   <div class="CSSgal">
+   
 
 <!-- Don't wrap targets in parent -->
 <s id="s1"></s> 
@@ -17,12 +31,12 @@ import CardLivro from '@/components/CardLivro.vue'
 <s id="s3"></s>
 <s id="s4"></s>
 
-<div class="slider">
+<div class="slider reveal">
   <div style="background:#5b8;">
     <h2>PURE <b>CSS</b> SLIDESHOW</h2>
     <p>Responsive Slideshow Gallery created using CSS only<br>by Roko</p>
   </div>
-  <div style="background:#85b;">
+  <div style="background:rgb(254, 252, 255);">
     <h2>Slide 2</h2>
   </div>
   <div style="background:#e95;">
@@ -63,6 +77,48 @@ import CardLivro from '@/components/CardLivro.vue'
 </template>
 
 <style scoped>
+.reveal {
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+.banana {
+	background: url('http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg');
+	text-align: center;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	overflow: hidden;
+	border-radius: 0 0 85% 85% / 30%;
+  margin-bottom: 100px;
+}
+.banana .overlay{
+	width: 100%;
+	height: 100%;
+	padding: 50px;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #333;
+  background-image: linear-gradient( 135deg, #7105ff69 10%, rgba(253, 8, 212, 0.42) 100%);
+	
+}
+
+h1 {
+	font-family: 'Dancing Script', cursive;
+	font-size: 80px;
+	margin-bottom: 30px;
+}
+
+h3, p {
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 30px;
+}
 *{box-sizing: border-box; -webkit-box-sizing: border-box; }
 html, body { height: 100%; }
 body { margin: 0; font: 16px/1.3 sans-serif; }

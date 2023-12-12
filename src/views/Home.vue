@@ -38,6 +38,7 @@ let lua = document.getElementById('lua');
 window.addEventListener("scroll", reveal);
 
 
+
 </script>
 
 
@@ -86,16 +87,7 @@ window.addEventListener("scroll", reveal);
 .oink {
   z-index: 100;
 }
-.reveal {
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 1s all ease;
-}
 
-.reveal.active {
-  transform: translateY(0);
-  opacity: 1;
-}
 
 *{
     margin: 0;

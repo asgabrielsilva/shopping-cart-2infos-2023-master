@@ -4,7 +4,6 @@ import ListagemLivros from '@/components/ListagemLivros.vue'
 </script>
 
 <template>
-  <h1>Minha livraria</h1>
   <div class="container-geral">
     <ListagemLivros />
 

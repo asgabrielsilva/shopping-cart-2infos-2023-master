@@ -2,10 +2,6 @@
 import MButton from './MButton.vue'
 import CartPlus from 'vue-material-design-icons/CartPlus.vue'
 import ShareVariant from 'vue-material-design-icons/ShareVariant.vue'
-import { Carousel, Slide } from 'vue-carousel';
-
-
-
 
 
 const props = defineProps({
